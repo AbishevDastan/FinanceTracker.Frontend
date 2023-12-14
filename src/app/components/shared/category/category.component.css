@@ -1,0 +1,14 @@
+.category-container {
+    margin-right: 4%;
+    margin-left: 4%;
+
+}
+
+.category-image img {
+    width: 100px;
+    border-radius: 100px;
+}
+
+.category-name {
+    color: white;
+}

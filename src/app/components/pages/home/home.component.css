@@ -1,0 +1,11 @@
+.categories-container {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.add-category-form-container form {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}

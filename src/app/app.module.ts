@@ -10,8 +10,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryComponent } from './components/shared/category/category.component';
+import { CommonModule } from '@angular/common';
 
 
 const appRoutes: Routes = [
@@ -32,7 +34,8 @@ const AUTHENTICATION_INTERCEPTOR = {
     HeaderComponent,
     HomeComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,13 @@ const AUTHENTICATION_INTERCEPTOR = {
     RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'}),
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    AUTHENTICATION_INTERCEPTOR,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

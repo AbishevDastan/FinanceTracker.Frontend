@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="page-container">
+    <div class="categories-container">
+        <div *ngFor="let category of categories">
+            <app-category [category]="category"></app-category>
+        </div>
+    </div>
+    <div class="add-category-form-container">
+        <form #addCategoryForm="ngForm" (ngSubmit)="onAddCategorySubmit();">
+            <input [(ngModel)]="addCategoryDto.name" type="text" name ="name" class="form-control" id="name" placeholder="Enter category name" required>
+            <button type="submit" class="btn btn-outline-light" [disabled]="addCategoryForm.invalid">Create</button>
+        </form>
+    </div>
+</div>
